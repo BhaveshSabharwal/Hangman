@@ -1,88 +1,128 @@
-const list = {
+const movieList = {
     easy: [
         {
-            word: "river",
-            hint: "A large natural stream of water flowing in a channel to the sea, a lake, or another such stream."
+            movie: "Titanic",
+            hint: "A love story set on the ill-fated ship."
         },
         {
-            word: "butterfly",
-            hint: "An insect with colorful wings and a slender body."
+            movie: "Jurassic Park",
+            hint: "Dinosaurs are brought back to life on an island theme park."
         },
         {
-            word: "football",
-            hint: "A popular sport played with a spherical ball."
+            movie: "The Lion King",
+            hint: "A young lion prince flees his kingdom after the murder of his father."
         },
         {
-            word: "painting",
-            hint: "An art form using colors on a surface to create images or expression."
+            movie: "Forrest Gump",
+            hint: "A man with a low IQ recounts his extraordinary life journey."
         },
         {
-            word: "breeze",
-            hint: "A gentle wind."
+            movie: "Harry Potter and the Sorcerer's Stone",
+            hint: "A young wizard discovers his magical heritage and attends a school for wizards."
         },
         {
-            word: "sunflower",
-            hint: "A tall plant with a large yellow flower head."
+            movie: "The Avengers",
+            hint: "A team of superheroes unites to save the world from an alien invasion."
         },
         {
-            word: "coffee",
-            hint: "A popular caffeinated beverage made from roasted coffee beans."
+            movie: "Toy Story",
+            hint: "A cowboy doll feels threatened when a new spaceman figure enters the picture."
+        },
+        {
+            movie: "The Dark Knight",
+            hint: "A superhero faces his greatest nemesis, the Joker, in a dark and thrilling battle."
+        },
+        {
+            movie: "Frozen",
+            hint: "A young princess sets out on a journey to find her estranged sister who has ice powers."
+        },
+        {
+            movie: "Star Wars: A New Hope",
+            hint: "A young farm boy joins a rebel alliance to fight against a galactic empire."
         }
     ],
     medium: [
         {
-            word: "safari",
-            hint: "An expedition or journey, typically to observe wildlife in their natural habitat."
+            movie: "Inception",
+            hint: "A thief who steals secrets through dreams must plant an idea into a target's subconscious."
         },
         {
-            word: "symphony",
-            hint: "A long musical composition for a full orchestra, typically in multiple movements."
+            movie: "The Matrix",
+            hint: "A hacker discovers the reality he knows is a simulated world."
         },
         {
-            word: "planet",
-            hint: "A celestial body that orbits a star and does not produce light of its own."
+            movie: "Blade Runner",
+            hint: "A cop hunts down replicants in a dystopian future."
         },
         {
-            word: "jazz",
-            hint: "A genre of music characterized by improvisation and syncopation."
+            movie: "The Truman Show",
+            hint: "A man discovers his entire life is a reality TV show."
         },
         {
-            word: "novel",
-            hint: "A long work of fiction, typically with a complex plot and characters."
+            movie: "Fight Club",
+            hint: "An office worker and a soap maker start an underground fight club."
         },
         {
-            word: "adventure",
-            hint: "An exciting or daring experience."
+            movie: "The Grand Budapest Hotel",
+            hint: "A concierge at a famous hotel gets involved in a murder mystery."
         },
         {
-            word: "telescope",
-            hint: "An optical instrument used to view distant objects in space."
+            movie: "No Country for Old Men",
+            hint: "A hunter stumbles upon a drug deal gone wrong and takes a suitcase of cash."
+        },
+        {
+            movie: "Donnie Darko",
+            hint: "A troubled teenager is plagued by visions of a man in a rabbit suit."
+        },
+        {
+            movie: "The Prestige",
+            hint: "Two rival magicians compete to create the ultimate stage illusion."
+        },
+        {
+            movie: "The Social Network",
+            hint: "The story behind the creation of Facebook and the ensuing legal battles."
         }
     ],
-    hard: [
+    difficult: [
         {
-            word: "whisper",
-            hint: "To speak very softly or quietly, often in a secretive manner."
+            movie: "Eraserhead",
+            hint: "A surrealist horror film about a man living in a dystopian world and caring for his deformed child."
         },
         {
-            word: "desert",
-            hint: "A barren or arid land with little or no precipitation."
+            movie: "Solaris",
+            hint: "A psychologist sent to a space station orbiting a mysterious planet encounters strange phenomena."
         },
         {
-            word: "obfuscate",
-            hint: "To confuse or bewilder someone; to make something unclear or difficult to understand."
+            movie: "Metropolis",
+            hint: "A silent film depicting a futuristic dystopia where the working class is oppressed."
         },
         {
-            word: "mysterious",
-            hint: "Difficult or impossible to understand, explain, or identify."
+            movie: "Persona",
+            hint: "A nurse and her patient develop a complex relationship where their identities begin to merge."
         },
         {
-            word: "nostalgia",
-            hint: "A sentimental longing or wistful affection for the past."
+            movie: "Stalker",
+            hint: "A guide leads two men through a mysterious area known as 'The Zone' in search of a room that grants wishes."
         },
         {
-            word: "science",
-            hint: "The systematic study of the structure and behavior of the physical and natural world."
+            movie: "Mulholland Drive",
+            hint: "A woman with amnesia and an aspiring actress try to solve the mystery of her identity."
+        },
+        {
+            movie: "The Seventh Seal",
+            hint: "A medieval knight plays a game of chess with Death during the Black Plague."
+        },
+        {
+            movie: "Aguirre, the Wrath of God",
+            hint: "A man leads a group of conquistadors on a doomed expedition in search of El Dorado."
+        },
+        {
+            movie: "La Jetée",
+            hint: "A post-apocalyptic short film about time travel and a man's haunting memory of his childhood."
+        },
+        {
+            movie: "The Man Who Fell to Earth",
+            hint: "An alien arrives on Earth with plans to save his home planet but gets sidetracked."
         }
     ]
 };

@@ -1,14 +1,13 @@
-
 const wordDisplay = document.querySelector(".word-display");
 const guessesText = document.querySelector(".guesses-text b");
 const keyboardDiv = document.querySelector(".keyboard");
 const hangmanImage = document.querySelector(".hangman-box img");
 const gameModal = document.querySelector(".game-modal");
 const playAgainBtn = gameModal.querySelector("button");
-const difficultyButtons = document.querySelectorAll(".difficulty-btn");
+const difficultySelect = document.querySelector("#difficulty");
 
 // Initializing game variables
-let currentWord, correctLetters, wrongGuessCount, selectedCategory;
+let currentWord, correctLetters, wrongGuessCount;
 const maxGuesses = 6;
 
 const resetGame = () => {
@@ -23,16 +22,16 @@ const resetGame = () => {
 }
 
 const getRandomWord = () => {
-    // Selecting a random word and hint from the selected category
-    const wordList = wordCategories[selectedCategory];
-    const { word, hint } = wordList[Math.floor(Math.random() * wordList.length)];
-    currentWord = word; // Making currentWord as random word
+    // Get selected difficulty level
+    const selectedLevel = difficultySelect.value;
+    const { movie, hint } = movieList[selectedLevel][Math.floor(Math.random() * movieList[selectedLevel].length)];
+    currentWord = movie.toLowerCase(); // Setting the current word to the selected movie
     document.querySelector(".hint-text b").innerText = hint;
     resetGame();
 }
 
 const gameOver = (isVictory) => {
-    // After game complete.. showing modal with relevant details
+    // After game completion, show modal with relevant details
     const modalText = isVictory ? `You found the word:` : 'The correct word was:';
     gameModal.querySelector("img").src = `images/${isVictory ? 'victory' : 'lost'}.gif`;
     gameModal.querySelector("h4").innerText = isVictory ? 'Congrats!' : 'Game Over!';
@@ -41,9 +40,9 @@ const gameOver = (isVictory) => {
 }
 
 const initGame = (button, clickedLetter) => {
-    // Checking if clickedLetter exists on the currentWord
+    // Check if clicked letter exists in the current word
     if (currentWord.includes(clickedLetter)) {
-        // Showing all correct letters on the word display
+        // Show all correct letters in the word display
         [...currentWord].forEach((letter, index) => {
             if (letter === clickedLetter) {
                 correctLetters.push(letter);
@@ -52,14 +51,14 @@ const initGame = (button, clickedLetter) => {
             }
         });
     } else {
-        // If clicked letter doesn't exist then update the wrongGuessCount and hangman image
+        // If the clicked letter doesn't exist, update the wrongGuessCount and hangman image
         wrongGuessCount++;
         hangmanImage.src = `images/hangman-${wrongGuessCount}.svg`;
     }
-    button.disabled = true; // Disabling the clicked button so user can't click again
+    button.disabled = true; // Disabling the clicked button so the user can't click it again
     guessesText.innerText = `${wrongGuessCount} / ${maxGuesses}`;
 
-    // Calling gameOver function if any of these conditions meet
+    // Call gameOver function if any of these conditions meet
     if (wrongGuessCount === maxGuesses) return gameOver(false);
     if (correctLetters.length === currentWord.length) return gameOver(true);
 }
@@ -72,12 +71,6 @@ for (let i = 97; i <= 122; i++) {
     button.addEventListener("click", (e) => initGame(e.target, String.fromCharCode(i)));
 }
 
-// Adding event listeners to difficulty buttons
-difficultyButtons.forEach(button => {
-    button.addEventListener("click", () => {
-        selectedCategory = button.dataset.difficulty;
-        getRandomWord();
-    });
-});
-
+getRandomWord();
 playAgainBtn.addEventListener("click", getRandomWord);
+difficultySelect.addEventListener("change", getRandomWord); // Reload game when difficulty is changed
